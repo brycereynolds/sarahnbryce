@@ -52,6 +52,7 @@ $(document).ready(function() {
             slideshow: false,
             touch: true
         });
+        $('.flex-direction-nav').addClass('hide-for-small-only');
     }
 
     flexSlider();

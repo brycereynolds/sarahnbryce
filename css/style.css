@@ -220,7 +220,7 @@ blockquote.caption-2:before {
 }
 .date-container .counter .number {
   display: inline;
-  color: #925200;
+  color: #650192;
 }
 /*==== Callout ====*/
 .callout {
@@ -701,7 +701,13 @@ footer p {
     6. Retina Image Support
 
 -------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 48em) {
+  blockquote {
+    padding: 4em;
+  }
+}
 /*-----------------------------------------------------------------------------------*/
+/*  1. Styles for screens that are at least 768px; (48em) */
 /*  1. Styles for screens that are at least 768px; */
 /*-----------------------------------------------------------------------------------*/
 @media only screen and (min-width: 48em) {

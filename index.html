@@ -50,8 +50,8 @@
     </nav><!-- END Navigation for mobile devices -->
 
     <div class="row collapse">
-        <aside class="large-3 columns hide-for-medium-down">
-            <div class="side-nav-container nav">
+        <aside class="large-3 columns hide-for-medium-down side-nav-background">
+            <div class="side-nav-container nav" style="opacity: 1">
                 <div class="shadow"></div>
                 <h1 class="logo"><a href="#section-0">S + B</a></h1>
                 <nav class="hide-for-large-down">
@@ -69,14 +69,14 @@
         </aside>
 
         <div id="main" class="large-9 columns">
-            <div id="section-0">
+            <div class="section-padding" id="section-0">
                 <header>
                     <h2 class="section-title">
                         <span>Sarah</span> <em>and</em> <span>Bryce</span>
                     </h2>
                 </header>
                 <p class="subline">Come Celebrate Our Wedding With Us!</p>
-                <img src="img/hero-unit.jpg" alt="Placeholder" class="hero-unit fade-in" />
+                <img src="img/photos/P1020961.jpg" alt="Placeholder" class="hero-unit fade-in" />
                 <div class="row divider date-section">
                     <div class="large-6 small-12 columns">
                         <div class="date-container col-1">
@@ -103,9 +103,9 @@
                 </a>
             </div><!-- END .callout -->
 
-            <div id="section-1" class="section-odd row">
+            <div class="section-padding section-odd row">
                 <div class="section-title-container">
-                    <h2 class="section-title">Our Story</h2>
+                    <h2 id="section-1" class="section-title">Our Story</h2>
                     <span class="hearts"></span>
                 </div>
                 <div class="small-12 large-10 large-centered columns">
@@ -136,9 +136,9 @@
                 </div><!-- END .small-12  -->
             </div><!-- END #section-1 -->
 
-            <div id="section-2" class="row">
+            <div id="photo-section" class="section-padding row">
                 <div class="section-title-container">
-                    <h2 class="section-title">Photos</h2>
+                    <h2 id="section-2" class="section-title">Photos</h2>
                     <span class="hearts"></span>
                 </div>
                 <div class="small-12 columns">
@@ -195,10 +195,10 @@
                 </div>
             </div><!-- END #section-2 -->
 
-            <div id="section-3" class="section-odd">
+            <div class="section-padding section-odd">
                 <div class="row">
                     <div class="section-title-container">
-                        <h2 class="section-title">Groomsmen</h2>
+                        <h2 id="section-3" class="section-title">Groomsmen</h2>
                         <span class="hearts"></span>
                     </div>
                     <div class="small-11 small-centered large-8 large-centered columns">
@@ -228,10 +228,10 @@
                 </div><!-- END .row -->
             </div><!-- END #section-3 -->
 
-            <div id="section-4">
+            <div class="section-padding">
                 <div class="row">
                     <div class="section-title-container">
-                        <h2 class="section-title">Bridesmaids</h2>
+                        <h2 id="section-4" class="section-title">Bridesmaids</h2>
                         <span class="hearts"></span>
                     </div>
                     <div class="small-11 small-centered large-8 large-centered columns">
@@ -261,9 +261,9 @@
                 </div><!-- END .row -->
             </div><!-- END #section-4 -->
 
-            <div id="section-5" class="section-odd">
+            <div class="section-padding section-odd">
                 <div class="section-title-container">
-                    <h2 class="section-title">Gifts</h2>
+                    <h2 id="section-5" class="section-title">Gifts</h2>
                     <span class="hearts"></span>
                 </div>
                 <div class="small-12 large-6 large-centered columns wrapper">
@@ -295,9 +295,9 @@
                 </div>
             </div><!-- END #section-5 -->
 
-            <div id="section-6" class="js-form">
+            <div id="rsvp-section" class="section-padding js-form">
                 <div class="section-title-container">
-                    <h2 class="section-title">Rsvp</h2>
+                    <h2 id="section-6" class="section-title">Rsvp</h2>
                     <span class="hearts"></span>
                 </div>
                 <div class="small-12 large-10 large-centered columns">
@@ -377,6 +377,27 @@
 
                             </div>
                         </fieldset>
+                        <fieldset class="rsvp-attendance-mt">
+                            <legend>Are you interested in joining us in Montana the following weekend?</legend>
+                            <div class="large-6 columns">
+                                <label for="radio1">
+                                    <input name="radio_mt" value="accept" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!" required>
+                                    <span class="custom radio accept_mt"></span>
+                                    <span class="radio-label">Sure let us know more details!</span>
+                                </label>
+                            </div>
+                            <div class="large-6 columns">
+                                <label for="radio2">
+                                    <input name="radio_mt" value="decline" type="radio" id="radio2" style="display:none;" value="Declines with Regret." required>
+                                    <span class="custom radio decline_mt"></span>
+                                    <span class="radio-label">Unfortunately we can't make it.</span>
+                                </label>
+                            </div>
+                            <div class="large-12 columns">
+                                <p>We will be spending the following week and weekend in Montana and holding another reception for friends and family that can not make it to California. Everyone is invited to either event or both. For those that haven't been to Montana this will be a great time to see Bryce's hometown!</p>
+                            </div>
+                        </fieldset>
+
                         <button type="submit" class="button radius" id="js-submit-btn">
                             <i class="fa fa-envelope"></i>
                             <span class="btn-label">Send</span>

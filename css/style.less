@@ -51,6 +51,7 @@ body {
     color:#838383;
     font-family:'Roboto Slab', serif;
     text-align: center;
+    background: url('../img/background.jpg') repeat;
 }
 a {
     color:@primary;
@@ -119,10 +120,27 @@ blockquote.caption-2:before {
 }
 .section-title-container {
     text-align: center;
-    margin: 6em 0 2em;
+}
+.section-padding,
+#main > .section-padding.row{
+    padding: 6em 0 2em;
+
+    &:first-child{
+        padding-top: 0px;
+    }
+
+    &.json-form{
+        padding-bottom: 0px;
+    }
+}
+#photo-section {
+    margin-bottom: 6em;
+}
+#rsvp-section{
+    padding-bottom: 0px;
 }
 .section-title {
-    border-bottom: 4px double #c9b29b;
+    border-bottom: 4px double @borderColor;
     display: inline-block;
     text-align: center;
     font-size: 4em;
@@ -131,7 +149,7 @@ blockquote.caption-2:before {
     width: 100%;
 }
 .section-title em {
-    color:#987c61;
+    color:@secondaryHeading;
     font-family: 'Playfair Display', serif;
     font-size: 0.5em;
 }
@@ -160,30 +178,32 @@ blockquote.caption-2:before {
 .date-container .day-address {
     font-size: 1em;
 }
+.date-container .day-date{
+    font-size: 1.85em;
+}
 .date-container span {
     display:block;
-}
-.date-container .counter span {
-    display:inline;
 }
 .date-container .date {
     font-family: 'Roboto Slab', serif;
 }
 .date-container .accent {
-    color:#755f49;
+    color:@secondaryHeadingAccent;
     font-family: 'great_vibesregular','Helvetica Neue', Helvetica, sans-serif;
     font-weight: normal;
 }
 .date-container .day-location {
-    font-size: 5.00em;
+    font-size: 4em;
     margin: 29px 0 20px;
     text-transform: none;
 }
 .date-container .day-year {
-    font-size: 12em;
+    font-size: 11em;
+    line-height: 0.9em;
+    margin-bottom: -6px;
 }
 .date-container, .subline, .side-nav {
-    color: #987c61;
+    color: @secondaryHeading;
     font-family: 'Roboto Slab', serif;
     font-weight:bold;
     text-transform: uppercase;
@@ -198,7 +218,8 @@ blockquote.caption-2:before {
 }
 .date-container .counter{
   .number{
-    color: #333;
+    display:inline;
+    color: @counterAccentColor;
   }
 }
 /*==== Callout ====*/
@@ -447,13 +468,21 @@ label {
     padding-left:0.9375em!important;
     padding-right:0.9375em!important;
 }
-.rsvp-attendance label {
+.rsvp-attendance label,
+.rsvp-attendance-mt label {
     text-align:center;
     display: inline-block;
 }
-.rsvp-attendance .radio-label {
+.rsvp-attendance .radio-label,
+.rsvp-attendance-mt .radio-label {
     display: block;
     margin-top: 1em;
+}
+
+.rsvp-attendance-mt p{
+    margin: 15px 0;
+    font-size: 0.8em;
+    text-align: left;
 }
 
 form.custom .radio {
@@ -485,6 +514,39 @@ form.custom .dropdown {
         }
     }
 }
+
+
+/*==== Backstretch ====*/
+.side-nav-container{
+    opacity: 0.3;
+
+    &:hover{
+        opacity: 0.8 !important;
+        -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        -ms-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+}
+.backstretch{
+    &:after{
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+        -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+        -ms-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+        transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+}
+
 
 
 /*==== Error Handling ====*/
@@ -795,7 +857,7 @@ footer a {
         border-left: 1px solid #e4e4e4;
     }
     .date-container .day-date {
-        font-size: 1.250em;
+        font-size: 1.85em;
     }
     .date-container .day-time,
     .date-container .day-address {
@@ -804,7 +866,6 @@ footer a {
     .date-container .day-meta {
         font-size: 2.188em;
     }
-
     /*==== Footer ====*/
 
     footer {
@@ -814,6 +875,17 @@ footer a {
         text-align: right;
     }
 
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Styles for screens that are at least 909px; */
+/*-----------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 56.813em) {
+    .date-container .day-location {
+        font-size: 4em;
+        white-space:nowrap;
+    }
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -829,7 +901,10 @@ footer a {
     .top-bar-section ul li {
         border: none;
     }
-
+    .date-container .day-location {
+        font-size: 5em;
+        white-space:nowrap;
+    }
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -861,9 +936,6 @@ footer a {
     }
     .row .large-offset-1 {
         margin-left: 8.33333%;
-    }
-    .section-title {
-        margin-top: 0.550em;
     }
 
     /*==== The Sidebar ====*/

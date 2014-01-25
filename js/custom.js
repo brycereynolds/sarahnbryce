@@ -11,7 +11,7 @@ $(document).ready(function() {
             scrollSpeed: 1500
         });
 
-        var formTarget = $(".js-form"); // Assign this class to corresponding section on Index.html
+        var formTarget = $(".js-form");
 
         // Scrolls to form section
         $(".js-scroll").on("click", function() {
@@ -33,8 +33,8 @@ $(document).ready(function() {
 
     function backStrech() {
         $("aside").backstretch([
-            "img/placeholder-1.jpg",
-            "img/placeholder-2.jpg",
+            "img/photos/P1020998.jpg",
+            "img/photos/P1020949.jpg",
 
             ], {duration: 5000, fade: 1000});
     }
@@ -86,11 +86,16 @@ $(document).ready(function() {
         return false; // avoid to execute the actual submit of the form.
     });
 
+    // Remove opacity override on side nav so it shows subtly
+    setTimeout(function(){
+        $('.side-nav-container').animate({'opacity': 0.3});
+    }, 1500);
+
 
 
     // Setup countdown
     $('#countdown').countdown({
-        until: new Date(2014, 05, 17, 16, 00),
+        until: new Date("May 17, 2014 16:00:00"),
         layout: '<span class="number">{dn}</span> {dl} <span class="number">{mn}</span> {ml} <span class="number">{hn}</span> {hl} <span class="number">{sn}</span> {sl}'
     });
 

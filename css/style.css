@@ -466,16 +466,24 @@ label {
   text-align: left;
 }
 form.custom .radio {
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
   border: solid 5px #e6e6e6;
   height: 29px;
   width: 30px;
+  display: inline-block;
 }
 form.custom .custom.radio.checked:before {
-  top: 4px;
-  left: 5px;
+  content: "";
+  display: block;
   background-color: #e6e6e6;
   width: 10px;
   height: 10px;
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+  position: relative;
+  top: 4px;
+  left: 5px;
 }
 form.custom .dropdown {
   text-align: left;

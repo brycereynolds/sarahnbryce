@@ -447,6 +447,7 @@ label {
   font-weight: normal;
   padding: 0 1em;
   line-height: 1.4;
+  background: url('../img/background.jpg') repeat;
 }
 .rsvp-form div[class*="large-"] {
   padding-left: 0.9375em!important;
@@ -652,9 +653,6 @@ label.error {
   padding-left: 1em;
   margin-right: 1em;
 }
-.top-bar-section ul li {
-  border-bottom: 1px dotted #222222;
-}
 .top-bar-section ul li > a {
   background: #111111;
   font-weight: normal;
@@ -713,6 +711,9 @@ footer p {
   blockquote {
     padding: 4em;
   }
+}
+.hide-for-small, .hide-for-medium-down, .hide-for-large-down {
+  display: none !important;
 }
 /*-----------------------------------------------------------------------------------*/
 /*  1. Styles for screens that are at least 768px; (48em) */
@@ -838,6 +839,43 @@ footer p {
 /*  3. Styles for screens that are at least 1280px; */
 /*-----------------------------------------------------------------------------------*/
 @media only screen and (min-width: 80em) {
+  .hide-for-medium, .hide-for-medium-down {
+    display: inherit !important;
+  }
+  table.show-for-large,
+  table.show-for-large-up,
+  table.hide-for-medium,
+  table.hide-for-medium-down {
+    display: table;
+  }
+  thead.show-for-large,
+  thead.show-for-large-up,
+  thead.hide-for-medium,
+  thead.hide-for-medium-down {
+    display: table-header-group !important;
+  }
+  tbody.show-for-large,
+  tbody.show-for-large-up,
+  tbody.hide-for-medium,
+  tbody.hide-for-medium-down {
+    display: table-row-group !important;
+  }
+  tr.show-for-large,
+  tr.show-for-large-up,
+  tr.hide-for-medium,
+  tr.hide-for-medium-down {
+    display: table-row !important;
+  }
+  td.show-for-large,
+  td.show-for-large-up,
+  td.hide-for-medium,
+  td.hide-for-medium-down,
+  th.show-for-large,
+  th.show-for-large-up,
+  th.hide-for-medium,
+  th.hide-for-medium-down {
+    display: table-cell !important;
+  }
   /*==== The Logo ====*/
   .logo {
     margin: auto;

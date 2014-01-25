@@ -1,6 +1,8 @@
 <?php
 
-// Credit: http://codular.com/php-jquery-contact-form
+
+pr($_POST);
+exit();
 
 // Blank message to start with so we can append to it.
 $message = '';

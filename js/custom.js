@@ -97,7 +97,7 @@ $(document).ready(function() {
     // Setup countdown
     $('#countdown').countdown({
         until: new Date("May 17, 2014 16:00:00"),
-        layout: '<span class="number">{dn}</span> {dl} <span class="number">{mn}</span> {ml} <span class="number">{hn}</span> {hl} <span class="number">{sn}</span> {sl}'
+        layout: '<span class="number">{dn}</span> {dl} <span class="number">{hn}</span> {hl} <span class="number">{mn}</span> MIN <span class="number">{sn}</span> SEC'
     });
 
 

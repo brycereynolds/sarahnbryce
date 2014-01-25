@@ -1,20 +1,6 @@
 <?php
 require_once("app.php");
 
-if($status == 'live'){
-
-    $DBUser     = 'bryce';
-    $DBPass     = 'choenolds';
-
-}else{
-    $DBPass     = 'password';
-    $DBUser     = 'root';
-}
-
-$DBServer   = 'localhost';
-$DBName     = 'wedding';
-
-
 $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
 
 // check connection

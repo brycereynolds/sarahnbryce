@@ -1,0 +1,97 @@
+/* Fixing Up Good Ol'IE ---------------------- */
+
+/*==== The Sidebar Elements ====*/
+
+.lt-ie9 .logo {
+	margin: 0;
+	padding: 0;
+}
+.lt-ie9 aside {
+	width: 20%;
+	position: fixed!important;
+	left:0;
+	top:0;
+	height: 100%;
+	display: block!important;
+}
+.lt-ie9 aside nav {
+	display: block!important;
+}
+.lt-ie9 .bg-cover { 
+   background:transparent;
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000); 
+   zoom: 1;
+   height: 100%;
+}
+
+/*==== Primary Content Area ====*/
+
+.lt-ie9 #main {
+	width: 80%;
+	float:right;
+}
+.lt-ie9 .carousel li {
+	margin-bottom:1em;
+	margin-right:1em;
+} 
+.lt-ie9 .top-bar {
+	display: none!important;
+}
+.lt-ie9 .section-bride,
+.lt-ie9 .section-groom {
+	width:50%;
+}
+.lt-ie9 .carousel li {
+	width:25%;
+	padding: 0;
+	margin: 0;
+}
+.lt-ie9 .overlay-label {
+	background:transparent;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50990000,endColorstr=#50990000); 
+    zoom: 1;
+}
+.lt-ie9 .flexslider, 
+.lt-ie9 .content-block {
+	width: 60%;
+	margin: 0 auto;
+}
+.lt-ie9 .flex-control-nav {
+	display: none;
+}
+.large-block-grid-2 > li {
+	padding: 0 10px 10px;	
+}
+.lt-ie9 .content-block {
+	margin:4em auto 6em;
+}
+.block-grid {
+	width: 800px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.block-grid li {
+	list-style: none;
+	float:left;
+	width: 370px;
+	padding: 0;
+	margin: 0 10px;
+	text-align: center;
+}
+.block-grid .block-logo {
+	text-align: center;
+	width: 100%!important;
+	display: block;
+	float: left;
+	vertical-align: text-top;	
+}
+
+/*==== Form ====*/
+
+.rsvp-form {
+	width: 60%;
+	margin: 0 auto!important;
+}
+.lt-ie9 legend {
+	margin-bottom: 2em;
+}

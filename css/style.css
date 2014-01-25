@@ -1,0 +1,846 @@
+/*
+
+Primary Color:
+#DE675F : Buttons, Links and Headlines
+#EC6D65 : Button and Link Hover
+#FB918A : Light version used for borders around primary color
+rgba(222, 103, 95, 0.9) : Faded version of primary
+
+Purple Theme
+#6e1d9c : Buttons, Links and Headlines
+#8924C2 : Hover
+#d586fe : Light Version
+rgba(110, 29, 156, 0.9) : Faded
+
+heartPng: '../img/icon-hearts.png';
+heartJpg: '../img/icon-hearts.jpg';
+heart2x: '../img/icon-hearts@2x.png';
+ribbon: '../img/ribbon.png';
+ */
+/* COLORS */
+/* GRAY SCALE */
+/* IMAGES */
+/*------------------------------------------------------------------------------------
+
+    Theme Name: Eternity
+    Theme URI: http://demo.themechills.com/eternity
+    Description: A beautiful landing page template for all wedding occasions.
+    Author: ThemeChills
+    Author URI: http://www.themechills.com
+
+--------------------------------------------------------------------------------------
+
+    1.  Overrides
+    2.  Main Content Styles
+    3.  Sidebar Styles
+    4.  Forms - Base Styles
+    5.  Image Gallery
+    6.  Footer Styles
+    7.  Helpers
+
+------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: 'ostrich_sansbold';
+  src: url('../fonts/ostrich-bold-webfont.eot');
+  src: url('../fonts/ostrich-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/ostrich-bold-webfont.woff') format('woff'), url('../fonts/ostrich-bold-webfont.ttf') format('truetype'), url('../fonts/ostrich-bold-webfont.svg#ostrich_sansbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'great_vibesregular';
+  src: url('../fonts/greatvibes-regular-webfont.eot');
+  src: url('../fonts/greatvibes-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/greatvibes-regular-webfont.woff') format('woff'), url('../fonts/greatvibes-regular-webfont.ttf') format('truetype'), url('../fonts/greatvibes-regular-webfont.svg#great_vibesregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  1.  Overrides
+/*-----------------------------------------------------------------------------------*/
+body {
+  color: #838383;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+a {
+  color: #6e1d9c;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+a:hover {
+  color: #8924c2;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+/*==== Headings ====*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #6e1d9c;
+  font-family: 'ostrich_sansbold', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+}
+/*==== The Grid ====*/
+.row, .row .row {
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  2.  Main Content Styles
+/*-----------------------------------------------------------------------------------*/
+header {
+  margin-top: 0.5em;
+}
+blockquote {
+  border-left: none;
+  padding: 4em 2em;
+  margin-bottom: 0;
+  text-align: left;
+}
+blockquote:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 1px;
+  background: #d9d9d9;
+}
+blockquote.caption-2:before {
+  background: none;
+}
+.subline {
+  padding: 1em 0.5em 0;
+}
+.section-title-container {
+  text-align: center;
+  margin: 6em 0 2em;
+}
+.section-title {
+  border-bottom: 4px double #c9b29b;
+  display: inline-block;
+  text-align: center;
+  font-size: 4em;
+  line-height: 1.2;
+  margin: 0;
+  width: 100%;
+}
+.section-title em {
+  color: #987c61;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.5em;
+}
+.hearts {
+  background: url('../img/icon-hearts-purple.png') no-repeat center bottom;
+  display: block;
+  height: 2em;
+  position: relative;
+  z-index: 4;
+  bottom: 20px;
+}
+.divider {
+  border-bottom: 1px solid #e4e4e4;
+}
+/*==== Date Block ====*/
+.date-container {
+  padding: 1.5em;
+}
+.date-container.col-1 {
+  border-bottom: 1px solid #e4e4e4;
+}
+.date-container .day-date, .date-container .day-time, .date-container .day-address {
+  font-size: 1em;
+}
+.date-container span {
+  display: block;
+}
+.date-container .counter span {
+  display: inline;
+}
+.date-container .date {
+  font-family: 'Roboto Slab', serif;
+}
+.date-container .accent {
+  color: #755f49;
+  font-family: 'great_vibesregular', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: normal;
+}
+.date-container .day-location {
+  font-size: 5.00em;
+  margin: 29px 0 20px;
+  text-transform: none;
+}
+.date-container .day-year {
+  font-size: 12em;
+}
+.date-container, .subline, .side-nav {
+  color: #987c61;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.date-container .day-meta {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 1.45em;
+  margin-top: 15px;
+}
+.date-container .counter .number {
+  color: #333;
+}
+/*==== Callout ====*/
+.callout {
+  clear: both;
+  text-align: center;
+  margin: 4em 0 6em;
+}
+.callout .button {
+  margin-bottom: 0;
+}
+/*==== Sections ====*/
+div[id*="section-"] {
+  overflow: hidden;
+  text-align: center;
+}
+.section-odd {
+  background: #f7f7f7;
+}
+.btn-label {
+  margin-left: 0.5em;
+}
+/*==== Block Grid ====*/
+.block-grid li {
+  margin-bottom: 0.88em;
+}
+.block-grid .block-logo {
+  background-color: #FFF;
+  border-radius: 10px;
+  display: table-cell;
+  height: 10em;
+  text-align: center;
+  padding: 4em;
+  vertical-align: middle;
+  width: 50%;
+}
+.block-logo:hover {
+  background-color: #FFF;
+  cursor: pointer;
+}
+.block-logo img {
+  opacity: .5;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all .6s ease;
+  /* Fade to color for Chrome and Safari */
+
+  -webkit-backface-visibility: hidden;
+  /* Fix for transition flickering */
+
+}
+.block-logo:hover img {
+  opacity: 1;
+  -webkit-filter: grayscale(0);
+}
+.visible-img img {
+  width: auto;
+}
+/*==== Content Block ====*/
+.content-block {
+  margin: 2em 0 6em;
+  line-height: 2em;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  3.  Sidebar Styles
+/*-----------------------------------------------------------------------------------*/
+aside {
+  width: 100%;
+  height: 30em;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  position: relative!important;
+  z-index: 997;
+}
+aside .postfix.button {
+  line-height: 0.125em;
+  padding: 1.43em 0;
+}
+.side-nav {
+  background-color: #8924c2;
+  /* fallback */
+
+  background: rgba(110, 29, 156, 0.9);
+  margin: 0;
+  padding: 0;
+}
+.side-nav li {
+  margin: 0;
+}
+.side-nav li a {
+  color: #fff;
+  border-top: 1px solid #d586fe;
+  display: block;
+  padding: 1.25em;
+}
+.side-nav li.active a, .side-nav li a:hover {
+  background-color: #fff;
+  color: #6e1d9c;
+}
+.side-nav-container {
+  margin: 0 auto;
+  width: 59%;
+}
+.shadow {
+  -webkit-box-shadow: 0 0 1.5em #6e6e6e;
+  -moz-box-shadow: 0 0 1.5em #6e6e6e;
+  box-shadow: 0 0 1.5em #6e6e6e;
+}
+.logo {
+  margin: 5em auto;
+}
+.logo a {
+  background-color: #6e1d9c;
+  /* fallback */
+
+  background-color: rgba(110, 29, 156, 0.9);
+  color: #fff;
+  display: block;
+  font-size: 2.5em;
+  letter-spacing: -12px;
+  border-radius: 30px;
+}
+.ribbon {
+  background: none;
+  display: block;
+  height: 8px;
+  opacity: 0.9;
+}
+/* Global Buttons */
+button, .button {
+  background-color: #6e1d9c;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  padding: 1.250em 1.5em;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  background-color: #8924c2;
+}
+.button.clear-guests {
+  background-color: #A3A3A3;
+}
+.button.clear-guests:hover, .button.clear-guests:focus {
+  background-color: #6F6F6F;
+}
+.button.clear-guests.hide {
+  display: none;
+}
+.button.clear-guests.display {
+  display: inline-block;
+}
+@include single-transition;
+/* High Quality/Definition Images */
+.hd {
+  margin-bottom: 1em;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  4.  Forms - Base Styles
+/*-----------------------------------------------------------------------------------*/
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  background-color: #F5F5F6;
+  border: 1px solid #F5F5F6;
+  border-radius: 3px;
+  height: 38px;
+  color: #818b92;
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: 0.25s ease-in;
+  -moz-transition: 0.25s ease-in;
+  transition: 0.25s ease-in;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  background-color: #FFF;
+  border: 1px solid #6e1d9c;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+label {
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+/*==== RSVP ====*/
+.rsvp-form {
+  margin: 2em 0 4em;
+}
+.rsvp-form fieldset {
+  border-color: #e6e6e6;
+  padding: 2em 0.5em;
+  margin: 1em 1em 3em;
+}
+.rsvp-form legend {
+  font-weight: normal;
+  padding: 0 1em;
+  line-height: 1.4;
+}
+.rsvp-form div[class*="large-"] {
+  padding-left: 0.9375em!important;
+  padding-right: 0.9375em!important;
+}
+.rsvp-attendance label {
+  text-align: center;
+  display: inline-block;
+}
+.rsvp-attendance .radio-label {
+  display: block;
+  margin-top: 1em;
+}
+form.custom .radio {
+  border: solid 5px #e6e6e6;
+  height: 29px;
+  width: 30px;
+}
+form.custom .custom.radio.checked:before {
+  top: 4px;
+  left: 5px;
+  background-color: #e6e6e6;
+  width: 10px;
+  height: 10px;
+}
+form.custom .dropdown {
+  text-align: left;
+}
+/*==== RSVP GUESTS ====*/
+.guest-list .guest {
+  padding: 22px 0;
+  border-bottom: 2px dashed #C0C0C0;
+}
+.guest-list .guest:last-child {
+  border: 0px;
+}
+/*==== Error Handling ====*/
+[data-abide] .error small.error, [data-abide] span.error, [data-abide] small.error {
+  display: block;
+  padding: 0.875em 0.25em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+  font-weight: normal;
+  background: #c60f13;
+  color: white;
+}
+[data-abide] span.error, [data-abide] small.error {
+  display: none;
+}
+span.error, small.error {
+  display: block;
+  padding: 0.375em 0.25em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: #c60f13;
+  color: white;
+}
+.error input, .error textarea, .error select {
+  border-color: #c60f13;
+  background-color: rgba(198, 15, 19, 0.1);
+  margin-bottom: 0;
+}
+.error input:focus, .error textarea:focus, .error select:focus {
+  background: #fafafa;
+  border-color: #999999;
+}
+.error label, .error label.error {
+  color: #c60f13;
+}
+.error > small, .error small.error {
+  display: block;
+  padding: 0.375em 0.25em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: #c60f13;
+  color: white;
+}
+.error span.error-message {
+  display: block;
+}
+input.error, textarea.error {
+  border-color: #c60f13;
+  background-color: rgba(198, 15, 19, 0.1);
+  margin-bottom: 0;
+}
+input.error:focus, textarea.error:focus {
+  background: #fafafa;
+  border-color: #999999;
+}
+.error select {
+  border-color: #c60f13;
+  background-color: rgba(198, 15, 19, 0.1);
+}
+.error select:focus {
+  background: #fafafa;
+  border-color: #999999;
+}
+label.error {
+  color: #c60f13;
+}
+/*==== Notification Panel ====*/
+.message-panel {
+  background-color: #ffffe0;
+  border-color: #e6db55;
+  padding: 1em;
+  font-size: 0.850em;
+  margin: 0 0 2em;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  5.  Image Gallery
+/*-----------------------------------------------------------------------------------*/
+.carousel li {
+  position: relative;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+.carousel img {
+  max-width: 100%;
+  height: auto;
+}
+.overlay-label {
+  background-color: rgba(110, 29, 156, 0.9);
+  display: inline;
+  left: 0px;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 3px;
+  opacity: 0;
+  margin: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 45%;
+  color: white;
+  font-size: 15px;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  transition: all .4s;
+}
+.overlay-label:hover {
+  opacity: 1;
+}
+/* Navigation */
+.top-bar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 997;
+  text-align: left;
+}
+.top-bar .name {
+  color: #fff;
+  font-weight: bold;
+  line-height: 3em;
+  padding-left: 1em;
+  margin-right: 1em;
+}
+.top-bar-section ul li {
+  border-bottom: 1px dotted #222222;
+}
+.top-bar-section ul li > a {
+  background: #111111;
+  font-weight: normal;
+}
+.top-bar-section ul li:first-child {
+  display: none;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  6.  Footer Styles
+/*-----------------------------------------------------------------------------------*/
+footer {
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2em;
+}
+footer p {
+  font-size: 0.750em;
+  margin-bottom: 0;
+}
+.copyright {
+  margin-bottom: 0.650em;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  7.  Helpers
+/*-----------------------------------------------------------------------------------*/
+.wrapper {
+  padding: 0 1em!important;
+}
+.sep {
+  margin: 3em 0 2em;
+}
+.preloader {
+  background: url(../img/status.gif) no-repeat center center;
+  min-height: 400px;
+}
+/*------------------------------------------------------------------------------------
+
+    Theme Name: Eternity
+    Theme URI: http://demo.themechills.com/eternity
+    Description: A beautiful landing page template for all wedding occasions.
+    Author: ThemeChills
+    Author URI: http://www.themechills.com
+
+--------------------------------------------------------------------------------------
+
+    1. Screens that are at least 768px
+    2. Screens that are at least 940px
+    3. Screens that are at least 1280px
+    4. iPads (landscape)
+    5. iPads (portrait)
+    6. Retina Image Support
+
+-------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*  1. Styles for screens that are at least 768px; */
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (min-width: 48em) {
+  blockquote {
+    padding: 4em;
+  }
+  /*==== The Logo ====*/
+  .logo {
+    margin: 1em auto 0;
+  }
+  .logo a {
+    border-radius: 0;
+  }
+  .ribbon {
+    background: url('../img/ribbon-purple.png') bottom left repeat-x;
+  }
+  /*==== The Grid ====*/
+  .large-3, .large-9 {
+    width: 100%;
+  }
+  .row .large-offset-1 {
+    margin-left: 0;
+  }
+  .clearing-assembled .clearing-container .carousel {
+    height: 185px;
+  }
+  .clearing-assembled .clearing-container .carousel > ul li {
+    margin-right: 5px;
+    width: 185px;
+  }
+  .section-title {
+    font-size: 6em;
+    width: auto;
+  }
+  .section-title em {
+    display: inline;
+  }
+  .section-title span:first-child {
+    margin-right: -15px;
+  }
+  .section-title span:last-child {
+    margin-left: -10px;
+  }
+  .block-grid .block-logo {
+    height: 15em;
+    text-align: center;
+    padding: 4em;
+    width: 50%;
+  }
+  /*==== Carousel +  Flexslider ====*/
+  .carousel li {
+    width: 25%;
+  }
+  /*==== Form ====*/
+  .rsvp-form fieldset {
+    padding: 2.5em;
+  }
+  /*==== Date Block ====*/
+  .date-container {
+    padding: 3em;
+    text-align: center;
+  }
+  .date-container.col-1 {
+    border-bottom: none;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .date-container.col-2 {
+    border-left: 1px solid #e4e4e4;
+  }
+  .date-container .day-date {
+    font-size: 1.250em;
+  }
+  .date-container .day-time, .date-container .day-address {
+    font-size: 1.563em;
+  }
+  .date-container .day-meta {
+    font-size: 2.188em;
+  }
+  /*==== Footer ====*/
+  footer {
+    text-align: left;
+  }
+  footer .credit {
+    text-align: right;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/*  2. Styles for screens that are at least 940px; */
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (min-width: 58.75em) {
+  .top-bar-section ul {
+    position: absolute;
+    right: 0;
+  }
+  .top-bar-section ul li {
+    border: none;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/*  3. Styles for screens that are at least 1280px; */
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (min-width: 80em) {
+  /*==== The Logo ====*/
+  .logo {
+    margin: auto;
+  }
+  /*==== Visibility ====*/
+  .hide-for-large, .hide-for-large-down {
+    display: inherit !important;
+  }
+  /*==== The Grid ====*/
+  .large-3 {
+    width: 25%;
+  }
+  .large-9 {
+    width: 75%;
+  }
+  .row .large-offset-1 {
+    margin-left: 8.33333%;
+  }
+  .section-title {
+    margin-top: 0.550em;
+  }
+  /*==== The Sidebar ====*/
+  aside {
+    height: 100%;
+    position: fixed!important;
+    float: left;
+    display: block;
+    left: 0;
+    z-index: 10;
+  }
+  #main > .row {
+    padding-top: 0;
+  }
+  .top-bar {
+    display: none!important;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/*  4. Styles for iPads (landscape) */
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  /*==== The Top Bar ====*/
+  .top-bar {
+    overflow: hidden;
+    position: fixed;
+  }
+  .top-bar-section ul {
+    float: right;
+  }
+  .top-bar-section ul li {
+    border-bottom: none;
+  }
+  /*==== The Header ====*/
+  header {
+    margin-top: 4em;
+  }
+  /*==== Gifts Grid ====*/
+  #section-5 .large-6 {
+    width: 66.66667%;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/*  5. Styles for iPads (portrait) */
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  blockquote {
+    padding: 2em 2em 4em;
+  }
+  /*==== Date Block ====*/
+  .date-container {
+    padding: 3em;
+  }
+  .date-section > .large-6 {
+    width: 100%;
+  }
+  .date-container, .date-container.col-1 {
+    text-align: center;
+  }
+  .date-container.col-1 {
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 1em;
+  }
+  /*==== Gifts Grid ====*/
+  #section-5 .large-6 {
+    width: 83.33333%;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/*  6. Retina Image Support */
+/*-----------------------------------------------------------------------------------*/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hearts {
+    background: url('../img/icon-hearts-purple@2x.png') no-repeat center bottom;
+    background-size: 56px 29px;
+  }
+}

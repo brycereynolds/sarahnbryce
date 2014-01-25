@@ -351,7 +351,13 @@
                                 </div>
                                 <div class="large-6 columns">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" class="input-field" id="phone" name="phone" value="" placeholder="A phone number is optional">
+                                    <input type="tel" class="input-field" id="phone" name="phone" value="" placeholder="Phone number (optional)">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <label for="food_allergy">If anyone in your party has food allergies or a dietary requirement please list them here:</label>
+                                    <input type="text" class="input-field" id="food_allergy" name="food_allergy" value="" placeholder="List food allergies (optional)">
                                 </div>
                             </div>
                         </fieldset>
@@ -359,14 +365,14 @@
                             <legend>Will you be attending?</legend>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio1">
-                                    <input name="radio" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!" required>
+                                    <input name="wedding_rsvp" type="radio" id="radio1" style="display:none;" value="accept" required>
                                     <span class="custom radio accept"></span>
                                     <span class="radio-label">Accepts with Pleasure!</span>
                                 </label>
                             </div>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio2">
-                                    <input name="radio" type="radio" id="radio2" style="display:none;" value="Declines with Regret." required>
+                                    <input name="wedding_rsvp" type="radio" id="radio2" style="display:none;" value="decline" required>
                                     <span class="custom radio decline"></span>
                                     <span class="radio-label">Declines with Regret.</span>
                                 </label>
@@ -392,14 +398,14 @@
                             <legend>Are you interested in joining us in Montana the following weekend?</legend>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio1">
-                                    <input name="radio_mt" value="accept" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!" required>
+                                    <input name="montana_rsvp" value="accept" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!" required>
                                     <span class="custom radio accept_mt"></span>
                                     <span class="radio-label">Sure let us know more details!</span>
                                 </label>
                             </div>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio2">
-                                    <input name="radio_mt" value="decline" type="radio" id="radio2" style="display:none;" value="Declines with Regret." required>
+                                    <input name="montana_rsvp" value="decline" type="radio" id="radio2" style="display:none;" value="Declines with Regret." required>
                                     <span class="custom radio decline_mt"></span>
                                     <span class="radio-label">Unfortunately we can't make it.</span>
                                 </label>
@@ -463,22 +469,7 @@
 
             <div class="large-2 columns">
                 <label for="child_age">Age</label>
-                <select class="input-field" id="child_age" name="child_age[]" placeholder="Age is required" required>
-                    <option value="< 1">< 1</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                </select>
+                <input type="text" class="input-field" name="child_age[]" placeholder="Age" required>
                 <small class="error">Age is required.</small>
             </div>
             <div class="large-2 columns"></div>

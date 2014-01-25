@@ -68,9 +68,6 @@ $(document).ready(function() {
     // submits form with ajax method
     formID.on("submit", function() {
 
-        console.log("FORM DETAILS", formID.serialize());
-        return false;
-
         $.ajax({
             url: "mailer.php",
             type: "POST",
@@ -123,43 +120,70 @@ $(document).ready(function() {
     }
 
 
-    // Events
-    $('.add-adult').on('click', function(e){
+
+
+    function addAdult(e){
         e && e.preventDefault();
-        $('.clear-guests.hide').addClass('display').removeClass('hide');;
+        $('.clear-guests.hide').addClass('display').removeClass('hide');
         $('.guest-list').append(_.template($('#guest-tmpl').html())).show();
-    });
+    }
 
-    $('.add-child').on('click', function(e){
+    function addChild(e){
         e && e.preventDefault();
-        $('.clear-guests.hide').addClass('display').removeClass('hide');;
+        $('.clear-guests.hide').addClass('display').removeClass('hide');
         $('.guest-list').append(_.template($('#guest-child-tmpl').html())).show();
-    });
+    }
 
-    $('.clear-guests').on('click', function(e){
+    function clearGuests(e){
         e && e.preventDefault();
         $('.guest-list').fadeOut(300, function(){
             $('.guest-list').html('');
         });
 
         $('.clear-guests').addClass('hide').removeClass('display');
-    });
-
-    var params = getURLParameters(location.href),
-        show = params.code ? params.code : false
-
-    if(show == 'sago'){
-        $('.add-child').remove();
     }
 
-    if(show){
-        // Show/Hide RSVP Menu selection on accept/decline
+
+
+    // Events
+    $('.add-adult').on('click',addAdult);
+    $('.add-child').on('click', addChild);
+    $('.clear-guests').on('click', clearGuests);
+
+    // (none) : no add guest option
+    // sago : single add guest only (classic +1)
+    // sccc : add guest(s) and children (wording will imply guests are meant to be a +1)
+
+    var params = getURLParameters(location.href),
+        show = params.code ? params.code : false,
+        guestText = null;
+
+    if(show == 'sago'){
+
+        guestText = 'Will you be bringing a plus-one?'
+        $('.add-child').remove();
+        $('.add-adult').remove();
+        $('.clear-guests').remove();
+        addAdult(null);
+
+    }else if(show == 'sccc'){
+
+        guestText = 'Will you be bringing a plus-one and your children?'
+
+    }
+
+    $('.rsvp-guests legend').text(guestText);
+
+    if(show == 'sago' || show == 'sccc'){
+
         $(".decline").on("click", function(){
             $(".rsvp-guests").fadeOut();
         });
+
         $(".accept").on("click", function(){
             $(".rsvp-guests").fadeIn();
         });
+
     }
 
 });

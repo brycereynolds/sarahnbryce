@@ -180,6 +180,7 @@ blockquote.caption-2:before {
 }
 .flex-caption {
   text-align: left;
+  font-size: 0.8em;
 }
 .flex-caption strong {
   display: block;
@@ -751,6 +752,9 @@ footer p {
 @media only screen and (min-width: 48em) {
   blockquote {
     padding: 2em;
+  }
+  .flex-caption {
+    font-size: 1em;
   }
   /*==== The Logo ====*/
   .logo {

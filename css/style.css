@@ -689,6 +689,18 @@ footer p {
   background: url(../img/status.gif) no-repeat center center;
   min-height: 400px;
 }
+.form_results {
+  text-align: center;
+  padding: 15px;
+  margin: 0 0 39px 0;
+  display: none;
+}
+.form_results.error {
+  background: #FFDFDF;
+}
+.form_results.success {
+  background: #FCFFDF;
+}
 /*------------------------------------------------------------------------------------
 
     Theme Name: Eternity

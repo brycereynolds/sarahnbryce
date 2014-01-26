@@ -67,16 +67,56 @@ $(document).ready(function() {
 
     // submits form with ajax method
     formID.on("submit", function() {
+        var $fr = $('.form_results');
+        $fr.hide().removeClass('error').removeClass('success');
 
         $.ajax({
             url: "mailer.php",
-            type: "POST",
+            type: 'post',
+            dataType: 'json',
             data: formID.serialize(), // serializes the form's elements.
 
             success: function(data) {
-                $(".js-display")
-                            .addClass("message-panel")
-                            .html(data); // show response from the php script.
+
+                console.log("data", data, arguments);
+
+                if(data && data.status == 'ok'){
+                    var wedding_rsvp = $('input:radio[name=wedding_rsvp]:checked').val(),
+                        montana_rsvp = $('input:radio[name=montana_rsvp]:checked').val();
+
+                    if(wedding_rsvp == 'decline' && montana_rsvp == 'decline'){
+
+                        $fr.html('We are sorry you can not make it but appreciate your response. Thanks!');
+
+                    }else if(wedding_rsvp == 'accept' && montana_rsvp == 'accept'){
+
+                        $fr.html('Woohoo we are happy you\'re coming!<br />Expect a formal invitation in the mail as well as more details about the Montana trip!');
+
+                    }else if(wedding_rsvp == 'accept'){
+
+                        $fr.html('Woohoo we are happy you\'re coming! Expect a formal invitation in the mail soon.<br />If you change your mind about Montana let us know!');
+
+                    }else{
+
+                        $fr.html('We\'re sad you can\'t make the California trip but are still really excited to see you in Montana!<br />We will be sending out more details about that trip soon. Thanks!');
+
+                    }
+
+                    $fr.addClass('success');
+
+                }else{
+
+                    if(data.msg){
+                        $fr.html(data.msg + '<br />If you still have trouble please send us an email instead using the link below. Thanks!');
+                    }else{
+                        $fr.html('Hmm looks like we have a problem on our end. Bryce probably screwed something up :)<br />Please send us an email instead using the link below. Thanks!');
+                    }
+
+                    $fr.addClass('error');
+
+                }
+
+                $fr.slideDown();
             }
 
         });

@@ -2,24 +2,25 @@
 
 include("database.php");
 
+
+///// MINOR VALIDATION - Leaving most of it to front-end
 $d = $_POST;
 
-$d['firstname'] = 'Bryce';
-$d['lastname'] = 'Reynolds';
-$d['address'] = '35 Union Avenue';
-$d['zip_code'] = '95008';
-$d['email'] = 'brycereynoldsdesign@gmail.com';
-$d['phone'] = '2535695159';
-$d['food_allergy'] = 'Gluten-free and vegetarian';
-$d['wedding_rsvp'] = 'accept';
-$d['montana_rsvp'] = 'accept';
+// $d['firstname'] = 'Bryce';
+// $d['lastname'] = 'Reynolds';
+// $d['address'] = '35 Union Avenue';
+// $d['zip_code'] = '95008';
+// $d['email'] = 'brycereynoldsdesign@gmail.com';
+// $d['phone'] = '2535695159';
+// $d['food_allergy'] = 'Gluten-free and vegetarian';
+// $d['wedding_rsvp'] = 'accept';
+// $d['montana_rsvp'] = 'accept';
 
-$d['guest_first_name'] = Array('Guest', 'Guest');
-$d['guest_last_name'] = Array('One', 'Two');
-$d['child_first_name'] = Array('Child', 'Child', 'Child');
-$d['child_last_name'] = Array('One', 'Two', 'Three');
-$d['child_age'] = Array('15 months', '11', '15');
-
+// $d['guest_first_name'] = Array('Guest', 'Guest');
+// $d['guest_last_name'] = Array('One', 'Two');
+// $d['child_first_name'] = Array('Child', 'Child', 'Child');
+// $d['child_last_name'] = Array('One', 'Two', 'Three');
+// $d['child_age'] = Array('15 months', '11', '15');
 
 // Declaring the variable for submitted inputs
 
@@ -50,11 +51,18 @@ if(!empty($error)){
     die;
 }
 
+if(!isset($d['child_first_name'])) $d['child_first_name'] = array();
+if(!isset($d['guest_first_name'])) $d['guest_first_name'] = array();
+
+
+
+
+///// QUICKLY SAVING INFO INTO IN CASE MAIL BOUNCES
+// Add response to DB
 function res($conn, $string){
     return $conn->real_escape_string($string);
 }
 
-// Add response to DB
 $query = "
 INSERT INTO `responses` (`first_name`, `last_name`, `wedding_rsvp`, `montana_rsvp`, `address`, `zip_code`, `email`, `phone`, `food_allergy`, `created`)
 VALUES
@@ -156,7 +164,7 @@ $subject = 'Website | {$firstname} {$lastname} has submitted their RSVP status.'
 $from = 'Sarah and Bryce';
 
 // Domain to show the email from
-$fromEmail = 'sarahnbryce@gmail.com';
+$fromEmail = 'brycereynoldsdesign@gmail.com';
 
 // Construct a header to send who the email is from
 $header = 'From: ' . $from . '<' . $fromEmail . '>';
@@ -165,7 +173,6 @@ $header = 'From: ' . $from . '<' . $fromEmail . '>';
 if(!mail($to, $subject, $message, $header)) {
 
     $return['status'] = 'error';
-    $return['msg'] = 'We were not able to send an email at this time. Please try again later or let us know of this error. Thanks!';
 
 }else{
 

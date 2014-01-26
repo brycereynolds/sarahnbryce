@@ -158,7 +158,7 @@ TEXT;
 $to = 'sarahnbryce@gmail.com';
 
 // Email Subject
-$subject = 'Website | {$firstname} {$lastname} has submitted their RSVP status.';
+$subject = "Website | $firstname $lastname has submitted their RSVP status.";
 
 // Name to show email from
 $from = 'Sarah and Bryce';

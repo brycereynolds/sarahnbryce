@@ -154,6 +154,9 @@ blockquote.caption-2:before {
   margin: 0;
   width: 100%;
 }
+.section-title.gift-accommodations {
+  font-size: 4em;
+}
 .section-title em {
   color: #eb8d00;
   font-family: 'Playfair Display', serif;
@@ -208,7 +211,7 @@ blockquote.caption-2:before {
   font-family: 'Roboto Slab', serif;
 }
 .date-container .accent {
-  color: #cc7200;
+  color: #eb8606;
   font-family: 'great_vibesregular', 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: normal;
 }
@@ -235,6 +238,9 @@ blockquote.caption-2:before {
   font-weight: normal;
   font-size: 1.45em;
   margin-top: 15px;
+}
+.date-container .counter {
+  font-size: 1;
 }
 .date-container .counter .number {
   display: inline;
@@ -719,6 +725,12 @@ footer p {
 .form_results.success {
   background: #FCFFDF;
 }
+.accommodation-details {
+  border: 1px solid #E6E6E6;
+  padding: 10px;
+  text-align: left;
+  position: relative;
+}
 /*------------------------------------------------------------------------------------
 
     Theme Name: Eternity
@@ -784,6 +796,9 @@ footer p {
     font-size: 6em;
     width: auto;
   }
+  .section-title.gift-accommodations {
+    font-size: 4em;
+  }
   .section-title em {
     display: inline;
   }
@@ -798,6 +813,9 @@ footer p {
     text-align: center;
     padding: 4em;
     width: 50%;
+  }
+  .date-container .counter {
+    font-size: 1.3em;
   }
   /*==== Carousel +  Flexslider ====*/
   .carousel li {
@@ -823,8 +841,11 @@ footer p {
   .date-container .day-date {
     font-size: 1.85em;
   }
-  .date-container .day-time, .date-container .day-address {
+  .date-container .day-address {
     font-size: 1.563em;
+  }
+  .date-container .day-time {
+    font-size: 1.263em;
   }
   .date-container .day-meta {
     font-size: 2.188em;
@@ -864,7 +885,7 @@ footer p {
     border: none;
   }
   .date-container .day-location {
-    font-size: 5em;
+    font-size: 4em;
     white-space: nowrap;
   }
 }

@@ -731,6 +731,14 @@ footer p {
   text-align: left;
   position: relative;
 }
+.section-bride strong {
+  display: block;
+}
+.wedding-party-images img {
+  max-height: 400px;
+  width: auto !important;
+  margin: 0 auto;
+}
 /*------------------------------------------------------------------------------------
 
     Theme Name: Eternity

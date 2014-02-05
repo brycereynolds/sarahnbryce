@@ -88,8 +88,11 @@ if($conn->query($query) === false) {
 }
 
 // Add in guests
+$guests = array();
 if(isset($d['guest_first_name']) && !empty($d['guest_first_name'])){
     for ($i=0; $i < count($d['guest_first_name']); $i++) { 
+        $guests[] = $d['guest_first_name'][$i]. ' ' . $d['guest_last_name'][$i];
+
         $query = "
         INSERT INTO `guests` (`response_id`, `guest`, `first_name`, `last_name`, `age`, `created`)
         VALUES
@@ -110,8 +113,12 @@ if(isset($d['guest_first_name']) && !empty($d['guest_first_name'])){
 
 
 // Add in children
+$children = array();
 if(isset($d['child_first_name'])){
     for ($i=0; $i < count($d['child_first_name']); $i++) { 
+
+        $children[] = $d['child_first_name'][$i]. ' ' . $d['child_last_name'][$i];
+
         $query = "
         INSERT INTO `guests` (`response_id`, `guest`, `first_name`, `last_name`, `age`, `created`)
         VALUES
@@ -130,13 +137,11 @@ if(isset($d['child_first_name'])){
     }
 }
 
+$guestCount = count($guests);
+$childCound = count($children);
 
-
-
-// Send an email for us as a notice
-
-$guestCount = count($d['guest_first_name']);
-$childCount = count($d['child_first_name']);
+$guestsString = implode(", ", $guests);
+$childrenString = implode(", ", $children);
 
 // Construct the message
 $message = '';
@@ -155,7 +160,10 @@ Food Allergy: {$food_allergy}
 Comments: {$comments}
 
 Additional Guest Count: {$guestCount}
+Guests: {$guestsString}
+
 Child Count: {$childCount}
+Children: {$childrenString}
 
 TEXT;
 

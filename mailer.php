@@ -88,7 +88,7 @@ if($conn->query($query) === false) {
 }
 
 // Add in guests
-if(isset($d['guest_first_name'])){
+if(isset($d['guest_first_name']) && !empty($d['guest_first_name'])){
     for ($i=0; $i < count($d['guest_first_name']); $i++) { 
         $query = "
         INSERT INTO `guests` (`response_id`, `guest`, `first_name`, `last_name`, `age`, `created`)

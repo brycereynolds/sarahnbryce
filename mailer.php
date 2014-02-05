@@ -33,6 +33,7 @@ $phone          = $d['phone'];
 $wedding_rsvp   = $d['wedding_rsvp'];
 $montana_rsvp   = $d['montana_rsvp'];
 $food_allergy   = $d['food_allergy'];
+$comments       = $d['comments'];
 
 // Check that all required inputs are not empty.
 if(empty($firstname) || empty($lastname) || empty($wedding_rsvp) || empty($email) ) {
@@ -64,7 +65,7 @@ function res($conn, $string){
 }
 
 $query = "
-INSERT INTO `responses` (`first_name`, `last_name`, `wedding_rsvp`, `montana_rsvp`, `address`, `zip_code`, `email`, `phone`, `food_allergy`, `created`)
+INSERT INTO `responses` (`first_name`, `last_name`, `wedding_rsvp`, `montana_rsvp`, `address`, `zip_code`, `email`, `phone`, `food_allergy`, `comments`, `created`)
 VALUES
     (
         '" . res($conn, $firstname) . "',
@@ -76,6 +77,7 @@ VALUES
         '" . res($conn, $email) . "',
         '" . res($conn, $phone) . "',
         '" . res($conn, $food_allergy) . "',
+        '" . res($conn, $comments) . "',
         NOW()
     )";
 

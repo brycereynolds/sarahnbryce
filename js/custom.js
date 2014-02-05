@@ -77,6 +77,7 @@ $(document).ready(function() {
             data: formID.serialize(), // serializes the form's elements.
 
             success: function(data) {
+                $('#js-submit-btn').fadeOut();
 
                 console.log("data", data, arguments);
 

@@ -151,7 +151,10 @@ Phone: {$phone}
 Attendance: {$wedding_rsvp}
 MT RSVP: {$montana_rsvp}
 
-Guests Count: {$guestCount}
+Food Allergy: {$food_allergy}
+Comments: {$comments}
+
+Additional Guests Count: {$guestCount}
 Child Count: {$childCount}
 
 TEXT;

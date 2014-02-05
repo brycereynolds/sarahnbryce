@@ -89,7 +89,7 @@ if($conn->query($query) === false) {
 
 // Add in guests
 $guests = array();
-if(isset($d['guest_first_name']) && !empty($d['guest_first_name'])){
+if(isset($d['guest_first_name']) && !empty(trim($d['guest_first_name'][0]))){
     for ($i=0; $i < count($d['guest_first_name']); $i++) { 
         $guests[] = $d['guest_first_name'][$i]. ' ' . $d['guest_last_name'][$i];
 
@@ -114,7 +114,7 @@ if(isset($d['guest_first_name']) && !empty($d['guest_first_name'])){
 
 // Add in children
 $children = array();
-if(isset($d['child_first_name'])){
+if(isset($d['child_first_name']) && !empty(trim($d['child_first_name'][0]))){
     for ($i=0; $i < count($d['child_first_name']); $i++) { 
 
         $children[] = $d['child_first_name'][$i]. ' ' . $d['child_last_name'][$i];

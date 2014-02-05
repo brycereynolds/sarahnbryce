@@ -154,7 +154,7 @@ MT RSVP: {$montana_rsvp}
 Food Allergy: {$food_allergy}
 Comments: {$comments}
 
-Additional Guests Count: {$guestCount}
+Additional Guest Count: {$guestCount}
 Child Count: {$childCount}
 
 TEXT;

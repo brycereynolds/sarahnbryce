@@ -34,6 +34,7 @@ $wedding_rsvp   = $d['wedding_rsvp'];
 $montana_rsvp   = $d['montana_rsvp'];
 $food_allergy   = $d['food_allergy'];
 $comments       = $d['comments'];
+$code           = $d['code'];
 
 // Check that all required inputs are not empty.
 if(empty($firstname) || empty($lastname) || empty($wedding_rsvp) || empty($email) ) {
@@ -65,7 +66,7 @@ function res($conn, $string){
 }
 
 $query = "
-INSERT INTO `responses` (`first_name`, `last_name`, `wedding_rsvp`, `montana_rsvp`, `address`, `zip_code`, `email`, `phone`, `food_allergy`, `comments`, `created`)
+INSERT INTO `responses` (`first_name`, `last_name`, `wedding_rsvp`, `montana_rsvp`, `address`, `zip_code`, `email`, `phone`, `food_allergy`, `comments`, `code`, `created`)
 VALUES
     (
         '" . res($conn, $firstname) . "',
@@ -78,6 +79,7 @@ VALUES
         '" . res($conn, $phone) . "',
         '" . res($conn, $food_allergy) . "',
         '" . res($conn, $comments) . "',
+        '" . res($conn, $code) . "',
         NOW()
     )";
 
@@ -138,10 +140,12 @@ if(isset($d['child_first_name']) && !empty($d['child_first_name'][0])){
 }
 
 $guestCount = count($guests);
-$childCound = count($children);
+$childCount = count($children);
 
 $guestsString = implode(", ", $guests);
 $childrenString = implode(", ", $children);
+
+$codeString = ($code == 'none' ? 'No Plus One' : ($code == 'sccc' ? 'Allow Plus One & Kids' : 'Allow Plus One'));
 
 // Construct the message
 $message = '';
@@ -153,11 +157,14 @@ Guest Details
 Name: {$firstname} {$lastname}
 Email: {$email}
 Phone: {$phone}
+
 Attendance: {$wedding_rsvp}
 MT RSVP: {$montana_rsvp}
 
 Food Allergy: {$food_allergy}
 Comments: {$comments}
+
+We allowed: {$codeString}
 
 Additional Guest Count: {$guestCount}
 Guests: {$guestsString}

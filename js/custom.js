@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var urlCode = 'none';
 
     /*-----------------------------------------------------------------------------------*/
     /*  Smooth Scroll
@@ -70,11 +71,16 @@ $(document).ready(function() {
         var $fr = $('.form_results');
         $fr.hide().removeClass('error').removeClass('success');
 
+        var formData = formID.serialize();
+        formData += '&code=' + urlCode;
+
+        console.log("FORM DATA", formData);
+
         $.ajax({
-            url: "mailer.php",
-            type: 'post',
-            dataType: 'json',
-            data: formID.serialize(), // serializes the form's elements.
+            url:        "mailer.php",
+            type:       "post",
+            dataType:   "json",
+            data:       formData,
 
             success: function(data) {
                 $('#js-submit-btn').fadeOut();
@@ -153,16 +159,6 @@ $(document).ready(function() {
         return result;
     }
 
-    var url = "example.com/test?code=tcba";
-    var params = getURLParameters(url);
-
-    for (var paramName in params){
-            $("#params").append(paramName +" is " + params[paramName] + "</br>");
-    }
-
-
-
-
     function addAdult(e){
         e && e.preventDefault();
         $('.clear-guests.hide').addClass('display').removeClass('hide');
@@ -198,6 +194,8 @@ $(document).ready(function() {
     var params = getURLParameters(location.href),
         show = params.code ? params.code : false,
         guestText = null;
+
+    urlCode = show ? show : urlCode;
 
     if(show == 'sago'){
 

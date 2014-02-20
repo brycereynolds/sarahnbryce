@@ -313,7 +313,7 @@
                     <h2 id="section-5" class="section-title gift-accommodations">Gifts &amp; Info</h2>
                     <span class="hearts"></span>
                 </div>
-                <div class="small-12 large-6 large-centered columns wrapper" style="display:none;">
+                <div class="small-12 large-6 large-centered columns wrapper">
                     <ul class="small-block-grid-1 large-block-grid-2 block-grid">
                         <li>
                             <a href="http://www.crateandbarrel.com/Gift-Registry/Sarah-Choe-and-Bryce-Reynolds/r5137615" class="block-logo">
@@ -328,7 +328,7 @@
                     </ul>
                 </div>
 
-                <div class="small-12 large-6 large-centered columns wrapper">
+                <div class="small-12 large-6 large-centered columns wrapper" style="display:none;">
                     <h3 style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif">Details coming soon!</h3>
                     <p>We will send out an email notice once we get our registry up.</p>
                 </div>
@@ -369,7 +369,9 @@
                     <span class="hearts"></span>
                 </div>
                 <div class="small-12 large-10 large-centered columns">
-                    <form data-abide method="POST" action="#" class="rsvp-form custom" id="js-form">
+                    <form name="submissionForm" data-abide method="POST" action="#" class="rsvp-form custom" id="js-form">
+                        <input type="hidden" name="response_id" value="" />
+
                         <fieldset class="rsvp-details">
                             <!-- Displays a global alert if required fields are missing -->
                             <div class="js-display"></div>
@@ -379,48 +381,48 @@
                             <div class="row">
                                 <div class="large-6 columns">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" id="firstname" class="input-field" name="firstname" value="" placeholder="Your first name is required" required>
+                                    <input type="text" id="firstname" class="input-field save_on_change" name="firstname" value="" placeholder="Your first name">
                                     <small class="error">First name is required.</small>
                                 </div>
                                 <div class="large-6 columns">
                                     <label for="lastname">Last Name</label>
-                                    <input type="text" id="lastname" class="input-field" name="lastname" value="" placeholder="Your last name is required" required>
+                                    <input type="text" id="lastname" class="input-field save_on_change" name="lastname" value="" placeholder="Your last name">
                                     <small class="error">Last name is required.</small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-6 columns">
                                     <label for="address">Street Address</label>
-                                    <input type="text" class="input-field" id="address" name="address" value="" placeholder="Street address is required" required>
+                                    <input type="text" class="input-field save_on_change" id="address" name="address" value="" placeholder="Street address">
                                     <small class="error">Street address is required.</small>
                                 </div>
                                 <div class="large-6 columns">
                                     <label for="zip_code">Zip Code</label>
-                                    <input type="text" class="input-field" id="zip_code" name="zip_code" value="" placeholder="Zip code is required" required>
+                                    <input type="text" class="input-field save_on_change" id="zip_code" name="zip_code" value="" placeholder="Zip code">
                                     <small class="error">Zip code is required.</small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-6 columns">
                                     <label for="email">Email</label>
-                                    <input type="email" class="input-field" id="email" name="email" value="" placeholder="name@yourdomain.com" required>
+                                    <input type="email" class="input-field save_on_change" id="email" name="email" value="" placeholder="name@yourdomain.com">
                                     <small class="error">Valid Email is required.</small>
                                 </div>
                                 <div class="large-6 columns">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" class="input-field" id="phone" name="phone" value="" placeholder="Phone number (optional)">
+                                    <input type="tel" class="input-field save_on_change" id="phone" name="phone" value="" placeholder="Phone number (optional)">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
                                     <label for="food_allergy">If anyone in your party has food allergies or a dietary requirement please list them here:</label>
-                                    <input type="text" class="input-field" id="food_allergy" name="food_allergy" value="" placeholder="List food allergies (optional)">
+                                    <input type="text" class="input-field save_on_change" id="food_allergy" name="food_allergy" value="" placeholder="List food allergies (optional)">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
                                     <label for="comments">Any comments?</label>
-                                    <textarea class="input-field" id="comments" name="comments" value="" placeholder="Comments"></textarea>
+                                    <textarea class="input-field save_on_change" id="comments" name="comments" value="" placeholder="Comments"></textarea>
                                 </div>
                             </div>
                         </fieldset>
@@ -428,14 +430,14 @@
                             <legend>Will you be attending?</legend>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio1">
-                                    <input name="wedding_rsvp" type="radio" id="radio1" style="display:none;" value="accept" required>
+                                    <input name="wedding_rsvp" class="save_on_change" type="radio" id="radio1" style="display:none;" value="accept">
                                     <span class="custom radio accept"></span>
                                     <span class="radio-label">Accepts with Pleasure!</span>
                                 </label>
                             </div>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio2">
-                                    <input name="wedding_rsvp" type="radio" id="radio2" style="display:none;" value="decline" required>
+                                    <input name="wedding_rsvp" class="save_on_change" type="radio" id="radio2" style="display:none;" value="decline">
                                     <span class="custom radio decline"></span>
                                     <span class="radio-label">Declines with Regret.</span>
                                 </label>
@@ -461,14 +463,14 @@
                             <legend>Are you interested in joining us in Montana the following weekend?</legend>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio1">
-                                    <input name="montana_rsvp" value="accept" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!" required>
+                                    <input name="montana_rsvp" class="save_on_change" value="accept" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!">
                                     <span class="custom radio accept_mt"></span>
                                     <span class="radio-label">Sure let us know more details!</span>
                                 </label>
                             </div>
                             <div class="large-6 medium-6 columns">
                                 <label for="radio2">
-                                    <input name="montana_rsvp" value="decline" type="radio" id="radio2" style="display:none;" value="Declines with Regret." required>
+                                    <input name="montana_rsvp" class="save_on_change" value="decline" type="radio" id="radio2" style="display:none;" value="Declines with Regret.">
                                     <span class="custom radio decline_mt"></span>
                                     <span class="radio-label">Unfortunately we can't make it.</span>
                                 </label>

@@ -64,7 +64,34 @@ $(document).ready(function() {
 
 
     // this is the id of the form
-    var formID = $("#js-form");
+    var formID = $("#js-form"),
+        formSubmitted = false;
+
+    // on any input blur we want to update db data
+    $('.save_on_change').change(function(){
+        if(formSubmitted) return false;
+
+        var formData = formID.serialize();
+        formData += '&code=' + urlCode;
+        formData += '&submission=false';
+
+        console.log("SAVE ON CHANGE", formData);
+
+        $.ajax({
+            url:        "mailer.php",
+            type:       "post",
+            dataType:   "json",
+            data:       formData,
+            success: function(data) {
+                console.log("data", data, arguments);
+                if(data && data.status == 'ok'){
+                    document.submissionForm.response_id.value = data.response_id;
+                }
+            }
+        });
+
+        return false; // avoid to execute the actual submit of the form.
+    });
 
     // submits form with ajax method
     formID.on("submit", function() {
@@ -73,8 +100,11 @@ $(document).ready(function() {
 
         var formData = formID.serialize();
         formData += '&code=' + urlCode;
+        formData += '&submission=true';
 
         console.log("FORM DATA", formData);
+
+        // _gaq.push(['_trackEvent', 'Form', 'Submission', $('#firstname').val() + ' ' + $('#lastname').val()]);
 
         $.ajax({
             url:        "mailer.php",
@@ -84,6 +114,7 @@ $(document).ready(function() {
 
             success: function(data) {
                 $('#js-submit-btn').fadeOut();
+                formSubmitted = true;
 
                 console.log("data", data, arguments);
 
@@ -186,6 +217,10 @@ $(document).ready(function() {
     $('.add-adult').on('click',addAdult);
     $('.add-child').on('click', addChild);
     $('.clear-guests').on('click', clearGuests);
+
+    $('#firstname').blur(function(){
+        //_gaq.push(['_trackEvent', 'Form', 'First Name - Blur', $('#firstname').val()]);
+    });
 
     // (none) : no add guest option
     // sago : single add guest only (classic +1)

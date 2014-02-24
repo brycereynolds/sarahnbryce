@@ -213,14 +213,44 @@ $(document).ready(function() {
 
 
 
+    // on any input blur we want to update db data
+    $('.save_on_change').change(function(){
+        if(formSubmitted) return false;
+
+        var formData = formID.serialize();
+        formData += '&code=' + urlCode;
+        formData += '&submission=false';
+
+        console.log("SAVE ON CHANGE", formData);
+
+        $.ajax({
+            url:        "mailer.php",
+            type:       "post",
+            dataType:   "json",
+            data:       formData,
+            success: function(data) {
+                console.log("data", data, arguments);
+                if(data && data.status == 'ok'){
+                    document.submissionForm.response_id.value = data.response_id;
+                }
+            }
+        });
+
+        return false; // avoid to execute the actual submit of the form.
+    });
+
+
+
+
+
     // Events
     $('.add-adult').on('click',addAdult);
     $('.add-child').on('click', addChild);
     $('.clear-guests').on('click', clearGuests);
 
-    // (none) : no add guest option
-    // sago : single add guest only (classic +1)
-    // sccc : add guest(s) and children (wording will imply guests are meant to be a +1)
+    // (none) : no add guest option ---- http://bit.ly/1fmwKxf
+    // sago : single add guest only (classic +1) ---- http://bit.ly/OrWT2Q
+    // sccc : add guest(s) and children (wording will imply guests are meant to be a +1) ---- http://bit.ly/1hJ6f79
 
     var params = getURLParameters(location.href),
         show = params.code ? params.code : false,

@@ -66,7 +66,9 @@ img {
     width: 100%;
     height: auto;
 }
-
+p{
+    text-align: left;
+}
 /*==== Headings ====*/
 
 h1,
@@ -75,12 +77,19 @@ h3,
 h4,
 h5,
 h6 {
-    color:@primary;
+    color: @primary;
     font-family: 'ostrich_sansbold','Helvetica Neue', Helvetica, sans-serif;
     font-weight: normal;
     line-height: 1.5;
 }
 
+.remove-decoration{
+    font-family:'Roboto Slab', serif;
+}
+
+ul{
+    list-style-type: none;
+}
 /*==== The Grid ====*/
 
 .row,
@@ -116,6 +125,7 @@ blockquote.caption-2:before {
     background:none
 }
 .subline {
+    text-align: center;
     padding: 1em 0.5em 0;
 }
 .section-title-container {

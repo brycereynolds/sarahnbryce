@@ -218,10 +218,6 @@ $(document).ready(function() {
     $('.add-child').on('click', addChild);
     $('.clear-guests').on('click', clearGuests);
 
-    $('#firstname').blur(function(){
-        //_gaq.push(['_trackEvent', 'Form', 'First Name - Blur', $('#firstname').val()]);
-    });
-
     // (none) : no add guest option
     // sago : single add guest only (classic +1)
     // sccc : add guest(s) and children (wording will imply guests are meant to be a +1)
